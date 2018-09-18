@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+         <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style type="text/css">
+    body {
+	font-family: Roboto;
+}
+
+h1 {
+    	background: #2980b9;
+	color: white;
+margin : 10px auto;
+   width: 500px;
+	padding: 10px 20px;
+	font-size: 24px;
+	font-weight: normal;
+	text-align : center;
+}
+
+.container {
+   margin : 0 auto;
+   width: 500px;
+   
+	box-shadow: 5px 10px 18px #888888;
+}
+
+#label {
+    font-weight: bold;
+    font-size : 30px;
+}
+
+p {
+    font-weight: normal;
+     font-size : 30px;
+}
+
+.bttn {
+    margin-left: 200px;
+}
+
+.posts {
+    margin: 0 auto;
+    width: 70%;
+    padding: 5px;
+    border: 2px solid grey;
+    margin-top: 10px;
+}
+
+.question {
+    color: skyblue;
+    font-family : PT Sans Narrow;
+    padding: 5px;
+}
+
+
+
+/*a {*/
+/*    background: #dc3545;*/
+    /*color: white;*/
+/*margin : 100px auto;*/
+/*   width: 500px;*/
+/*	padding: 10px 20px;*/
+/*	font-size: 24px;*/
+/*	font-weight: normal;*/
+/*}*/
+
+</style>
+<script>
+    var upvotes = 0;
+     var downvotes = 0;
+      var comments = 0;
+       var stars =0;
+      
+      
+    
+ 
+    
+   
+      
+ 
+    
+       
+       $("#first").click(function(){
+  $("#second").prop("disabled",true);
+});
+       
+       function updDb(upv, dwnv, comm, strs){
+           console.log("lolll!");
+           var x= "<%= upv3 %>";
+            var dw3= "<%= dwn3 %>";
+             var cm3= "<%= com3 %>";
+              var sr3= "<%= str3 %>";
+    var upvPass, dwnvPass, commPass, strsPass;
+    $.post('/updateDB', {
+                        upvPass: Number(upv) + Number(x),
+                        dwnvPass: Number(dwnv) + Number(dw3),
+                        commPass: Number(comm) + Number(cm3),
+                        strsPass: Number(strs) + Number(sr3)
+                    });
+         
+}
+// );
+    //   }
+       
+    function incrUpvote(btnactn) {
+        upvotes++;
+        console.log("UPVOTES :" +upvotes);
+          
+   
+       
+         $('#dwnbtn').prop("disabled",true);
+       btnactn.disabled = true;
+    }
+    function incrDownvote(btnactn) {
+        downvotes++;
+        
+   
+   
+   
+        console.log("DOWNVOTES: " +downvotes);
+          $('#upbtn').prop("disabled",true);
+       btnactn.disabled = true;
+    }
+    function incrComment(btnactn) {
+        comments++;
+        console.log("COMMENTS: "+comments);
+        btnactn.disabled = true;
+    }
+    function incrStar(btnactn) {
+        stars++;
+        console.log("STARS: " +stars);
+        btnactn.disabled = true;
+    }
+</script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default navbar-fixed-top">
+  <a class="navbar-brand" href="#">stack<strong>overflow</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<h1>Welcome to Stackoverflow - JAVA</h1>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="first" type="radio" name="vote3" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="second" type="radio" name="vote3" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>Answer</p>
+    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+
+<div>
+   <!--<form action="/updateDB" method="get">-->
+						<input type="submit" name="upvote" id="regbtn" onClick = "updDb(upvotes, downvotes, comments, stars);" >
+					<!--</form> -->
+					 <form action="/openview" method="get">
+						<input type="submit">
+					</form> 
+</body>
+</html>
