@@ -6,12 +6,45 @@ var path    = require("path");
 
 var app = express();
 
-//router.use(express.static('/home/ubuntu/workspace/public'));
+router.use(express.static('/home/ubuntu/workspace/views'));
 
-router.get('/openview', function (req, res) {
-  console.log("sdsdasandskas");
-    res.render("view.ejs");
-});
+router.get('/openview', function (req, res, next) {
+  var dum;
+  var currup, currdown, currcomm, currstar;
+User.findById(req.session.userId)
+    .exec(function (error, user) {
+      
+     // for (var i=0; i< 10; i++){
+      if (error || !user) {
+        var err = new Error('Wrong email or password.');
+        err.status = 401;
+        return next(err);
+      } else {
+        
+        console.log("here now!!");
+          currup = user.upvote;
+      // dum = Number(currup);
+      console.log("idar value: " +currup);
+      currdown = user.downvote;
+      console.log("idar value: " +currdown);
+      currcomm = user.comment;
+      currstar = user.star;
+      console.log("this ends!!");
+      }
+      
+     
+      
+   
+    
+   // if (currup == 103){
+    console.log("hereeee!!");
+    
+        res.render("view.ejs", {upv3 : currup, dwn3: currdown, com3: currcomm, str3 : currstar });
+   // }
+      
+   // }
+      } );}
+    );
 
 
 
