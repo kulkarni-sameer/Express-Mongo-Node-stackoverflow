@@ -10,12 +10,15 @@
 <style type="text/css">
     body {
 	font-family: Roboto;
+	margin : 10px auto;
 }
+
+.buttonHolder{ text-align: center; }
 
 h1 {
     	background: #2980b9;
 	color: white;
-margin : 10px auto;
+margin : 80px auto;
    width: 500px;
 	padding: 10px 20px;
 	font-size: 24px;
@@ -29,6 +32,10 @@ margin : 10px auto;
    
 	box-shadow: 5px 10px 18px #888888;
 }
+
+/*button {*/
+/*    margin-bottom : 25px;*/
+/*}*/
 
 #label {
     font-weight: bold;
@@ -103,6 +110,9 @@ p {
                         commPass: Number(comm) + Number(cm3),
                         strsPass: Number(strs) + Number(sr3)
                     });
+                    
+                    
+                    alert("Database Updated!");
          
 }
 // );
@@ -141,7 +151,7 @@ p {
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default fixed-top">
   <a class="navbar-brand" href="#">stack<strong>overflow</strong></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -153,27 +163,44 @@ p {
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <form action="/Logout" method="get">
+							<button id="tst" type="submit" class="btn btn-danger">Logout</button>
+					</form>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <li class="nav-item">
+       <form action="/openview" method="get">
+					<button type="submit" class="btn btn-outline-success">Open Visualization</button>
+					</form>
+					</li>
+     
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    	 
   </div>
+  
 </nav>
 <h1>Welcome to Stackoverflow - JAVA</h1>
+<div class="jumbotron">
+    
+  <h2 class="display-4">We are logging your actions!</h2>
+  <p class="lead">This is to let you know that we are logging your actions on this website for the following reasons:</p>
+  <hr class="my-4">
+  <ul>
+      <li>
+          To provide you with visualizations so that you can view your analytics of your actions on this page.
+      </li>
+       <li>
+          Helps you improve your stackoverflow profile!
+      </li>
+       <li>
+          Helps you to be aware of your upvote, downvote, comments, stars history on this website!
+      </li>
+  </ul>
+ 
+</div>
 
 <div class="posts">
     <p>Question</p>
@@ -459,12 +486,12 @@ p {
 </div>
 
 
-<div>
+<div class="buttonHolder">
    <!--<form action="/updateDB" method="get">-->
-						<input type="submit" name="upvote" id="regbtn" onClick = "updDb(upvotes, downvotes, comments, stars);" >
+						<!--<input type="submit" class="" name="upvote" id="regbtn" onClick = "updDb(upvotes, downvotes, comments, stars);" >-->
+					<p>	<button type="button" class="btn btn-outline-primary" onClick = "updDb(upvotes, downvotes, comments, stars);">Update Database</button>
 					<!--</form> -->
-					 <form action="/openview" method="get">
-						<input type="submit">
-					</form> 
+					 </p>
+					</div>
 </body>
 </html>

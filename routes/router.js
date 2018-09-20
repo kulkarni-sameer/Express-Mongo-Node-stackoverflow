@@ -11,6 +11,44 @@ router.use(express.static('/home/ubuntu/workspace/views'));
 router.get('/openview', function (req, res, next) {
   var dum;
   var currup, currdown, currcomm, currstar;
+  // User.findById({username: 'dyuthi'})
+  //   .exec(function (error, user1) {
+  //     console.log(user1.username);
+  //   });
+ // var myCursor = User.users.find( { username: 'aaa' } );
+//  console.log(myCursor);
+
+var aaup, aadown, aacomm, aastar;
+var bbup, bbdown, bbcomm, bbstar;
+var ccup, ccdown, cccomm, ccstar;
+
+
+User.findById("5ba19372ac9301161028ab7f")
+    .exec(function (error, user) {
+      bbup = user.upvote;
+      bbdown = user.downvote;
+      bbcomm = user.comment;
+      bbstar = user.star;
+    });
+    
+
+User.findById("5ba187ef1257e415c233ae2a")
+    .exec(function (error, user) {
+      aaup = user.upvote;
+      aadown = user.downvote;
+      aacomm = user.comment;
+      aastar = user.star;
+    });
+    
+    User.findById("5ba1cf6293e35c1d18fb20be")
+    .exec(function (error, user) {
+      ccup = user.upvote;
+      ccdown = user.downvote;
+      cccomm = user.comment;
+      ccstar = user.star;
+    });
+    
+    
 User.findById(req.session.userId)
     .exec(function (error, user) {
       
@@ -39,7 +77,7 @@ User.findById(req.session.userId)
    // if (currup == 103){
     console.log("hereeee!!");
     
-        res.render("view.ejs", {upv3 : currup, dwn3: currdown, com3: currcomm, str3 : currstar });
+        res.render("view.ejs", {upv3 : currup, dwn3: currdown, com3: currcomm, str3 : currstar, aaup : aaup, aadown: aadown, aacomm : aacomm, aastar: aastar, bbup : bbup, bbdown: bbdown, bbcomm : bbcomm, bbstar: bbstar, ccup : ccup, ccdown: ccdown, cccomm : cccomm, ccstar: ccstar });
    // }
       
    // }
@@ -200,11 +238,12 @@ db.collection('users').findAndModify(
       if (err){
          res.send("unable to update db!!") ;// returns error if no matching object found
       }else{
-          res.redirect('/profile');
+          res.redirect('/openview');
       }
   });
 });
 });
+
 
 // router.get('/openview', function (req, res, next) {
   
@@ -239,10 +278,21 @@ router.get('/logout', function (req, res, next) {
   
 // });
 
-
+router.get('/analysis', function (req, res, next) {
+ 
+    
+        res.render("ananfind.ejs");
+   // }
+      
+   // }
+      } );
+    
+    
+    
 router.get('/stackoverflow', function (req, res, next) {
   var dum;
   var currup, currdown, currcomm, currstar;
+  console.log(req.session.userId);
 User.findById(req.session.userId)
     .exec(function (error, user) {
       
