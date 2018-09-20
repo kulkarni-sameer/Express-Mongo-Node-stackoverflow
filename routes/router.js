@@ -6,7 +6,7 @@ var path    = require("path");
 
 var app = express();
 
-router.use(express.static('/home/ubuntu/workspace/views'));
+router.use(express.static('./views'));
 
 router.get('/openview', function (req, res, next) {
   var dum;
@@ -23,7 +23,8 @@ var bbup, bbdown, bbcomm, bbstar;
 var ccup, ccdown, cccomm, ccstar;
 
 
-User.findById("5ba19372ac9301161028ab7f")
+
+User.findById("5ba3465c78558433eaa6e1ed")
     .exec(function (error, user) {
       bbup = user.upvote;
       bbdown = user.downvote;
@@ -32,7 +33,7 @@ User.findById("5ba19372ac9301161028ab7f")
     });
     
 
-User.findById("5ba187ef1257e415c233ae2a")
+User.findById("5ba3462b78558433eaa6e1ec")
     .exec(function (error, user) {
       aaup = user.upvote;
       aadown = user.downvote;
@@ -40,7 +41,7 @@ User.findById("5ba187ef1257e415c233ae2a")
       aastar = user.star;
     });
     
-    User.findById("5ba1cf6293e35c1d18fb20be")
+    User.findById("5ba3467b78558433eaa6e1ee")
     .exec(function (error, user) {
       ccup = user.upvote;
       ccdown = user.downvote;
@@ -280,8 +281,8 @@ router.get('/logout', function (req, res, next) {
 
 router.get('/analysis', function (req, res, next) {
  
-    
-        res.render("ananfind.ejs");
+    var loggeduser = req.session.userId;
+        res.render("ananfind.ejs", {loggeduser: loggeduser});
    // }
       
    // }

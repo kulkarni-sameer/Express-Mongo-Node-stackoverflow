@@ -6,7 +6,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 
-var IP = process.env.IP;
+//var IP = localhost;
 
 //connect to MongoDB
 mongoose.connect('mongodb://localhost/testForAuth');
@@ -57,6 +57,6 @@ app.use(function (err, req, res, next) {
 
 
 // listen on port 3000
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, function(){
     console.log("server started.......");
 })

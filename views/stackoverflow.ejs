@@ -172,6 +172,12 @@ p {
 					<button type="submit" class="btn btn-outline-success">Open Visualization</button>
 					</form>
 					</li>
+
+
+          <li class="nav-item">
+      <button type="button" class="btn btn-outline-primary" onClick = "updDb(upvotes, downvotes, comments, stars);">Update Database</button>
+          </li>
+
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -204,9 +210,10 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
     <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
@@ -218,9 +225,9 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
 
 <div class="btn-group" data-toggle="buttons">
     <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
@@ -233,13 +240,14 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="first" type="radio" name="vote3" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="second" type="radio" name="vote3" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -248,13 +256,28 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -263,13 +286,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -278,13 +331,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -293,13 +376,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -308,13 +421,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -323,13 +466,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -338,13 +511,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -353,13 +556,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -368,13 +601,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -383,13 +646,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -398,13 +691,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -413,13 +736,43 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">Im new to programming  and I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
+    <p>Answer</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    </div>
+    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
+    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
+</div>
+
+<div class="posts">
+    <p>Question</p>
+    <p class="question">I'm using the Java SDK to connect to Box.  I find the root folder (this is a small dev instance so I don't mind searching from there.)  I execute the search query and I get results. My problem is that the search parameters do not seem to work consistently or at all.</p>
+    <p>Answer</p>
+    <p>The reason why your call doesn't work is because the query method parameter is sent as the "https://developers.box.com/docs/#search\" rel=\"nofollow\">\"query\" URL parameter in the API call. Therefore  the ampersands in your query string are being escaped.</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <button id ="upbtn" type="radio" name="vote2" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote2" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -428,58 +781,14 @@ p {
 
 <div class="posts">
     <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p class="question">I am making a code in which I record boolean data each day of the week to see if the user did the task that they are required to do. For example Press 'y' if you went to soccer practice today.Press 'n' if you didn't. I need the program to be able to ask this for all five days of the week and in the end record the number of times they went to soccer practice in one month. I have the basic idea on how to make the code for something if the user was going to enter it in one opening. But I need to save that boolean data every single day  and then recall... any ideass.....thankx</p>
     <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
+    <p>
+You need to save the values to some persistent storage. The simplest is file. Other could be database. So you need to find out how to read/write data.</p>
 
 <div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
-    </div>
-    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
-    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
-</div>
-
-
-<div class="posts">
-    <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-    <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-
-<div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
-    </div>
-    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
-    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
-</div>
-
-
-<div class="posts">
-    <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-    <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-
-<div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
-    </div>
-    <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
-    <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
-</div>
-
-
-<div class="posts">
-    <p>Question</p>
-    <p class="question">lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-    <p>Answer</p>
-    <p>lorem dsdsfmsndklmskdl mkndlksmdksmdklmsd</p>
-
-<div class="btn-group" data-toggle="buttons">
-    <button id ="upbtn" type="radio" name="vote" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
-    <button id="dwnbtn" type="radio" name="vote" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
+    <button id ="upbtn" type="radio" name="vote1" class="btn btn-success" onClick ="incrUpvote(this);">Upvote</button>
+    <button id="dwnbtn" type="radio" name="vote1" class="btn btn-danger" onClick="incrDownvote(this);">Downvote</button>
     </div>
     <button id="cmntbtn" class="btn btn-primary" onClick="incrComment(this);">Comment</button>
     <button id="strbtn" class="btn btn-warning" onClick="incrStar(this);">Star</button>
@@ -488,10 +797,7 @@ p {
 
 <div class="buttonHolder">
    <!--<form action="/updateDB" method="get">-->
-						<!--<input type="submit" class="" name="upvote" id="regbtn" onClick = "updDb(upvotes, downvotes, comments, stars);" >-->
-					<p>	<button type="button" class="btn btn-outline-primary" onClick = "updDb(upvotes, downvotes, comments, stars);">Update Database</button>
-					<!--</form> -->
-					 </p>
+						<!--<input type="submit" class="" name="upvote" id="regbtn" onClick = "updDb(upvotes, 
 					</div>
 </body>
 </html>
